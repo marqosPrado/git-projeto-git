@@ -9,7 +9,7 @@ public class TriangleAreaCalculator {
         setHeight(height);
     }
 
-    public double calcArea() {
+    public double calcAreaCommonTriangle() {
         return base * height / 2;
     }
 
