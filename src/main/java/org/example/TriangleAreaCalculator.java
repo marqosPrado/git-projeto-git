@@ -16,6 +16,13 @@ public class TriangleAreaCalculator {
         return base * height / 2;
     }
 
+    public double calcAreaEquilateral(double side) {
+        if (base <= 0 || height <= 0) {
+            throw new IllegalArgumentException("The base and height must be greater than zero");
+        }
+        return (Math.pow(side, 2) * Math.sqrt(3)) / 4;
+    }
+
     public double getBase() {
         return base;
     }
