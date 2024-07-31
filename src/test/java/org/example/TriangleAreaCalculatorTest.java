@@ -8,31 +8,42 @@ public class TriangleAreaCalculatorTest {
     @Test
     public void shouldCalcArea() {
         TriangleAreaCalculator calculator = new TriangleAreaCalculator(8, 7);
-        double area = calculator.calcArea();
+        double area = calculator.calcAreaCommonTriangle();
         Assertions.assertEquals(28, area);
     }
 
     @Test
+    public void shouldCalcAreaEquilateral() {
+        TriangleAreaCalculator calculator = new TriangleAreaCalculator(8, 7);
+        double area = calculator.calcAreaEquilateral(8);
+        Assertions.assertEquals(27.7128, area, 0.0001);
+    }
+
+    @Test
     public void shouldReturnExceptionWithZeroBase() {
-        TriangleAreaCalculator calculator = new TriangleAreaCalculator(0, 7);
-        Assertions.assertThrows(IllegalArgumentException.class, calculator::calcArea);
+        Assertions.assertThrows(
+                IllegalArgumentException.class, () -> new TriangleAreaCalculator(0, 7)
+        );
     }
 
     @Test
     public void shouldReturnExceptionWithNegativeBase() {
-        TriangleAreaCalculator calculator = new TriangleAreaCalculator(-8, 7);
-        Assertions.assertThrows(IllegalArgumentException.class, calculator::calcArea);
+        Assertions.assertThrows(
+                IllegalArgumentException.class, () -> new TriangleAreaCalculator(-8, 7)
+        );
     }
 
     @Test
     public void shouldReturnExceptionWithZeroHeight() {
-        TriangleAreaCalculator calculator = new TriangleAreaCalculator(8, 0);
-        Assertions.assertThrows(IllegalArgumentException.class, calculator::calcArea);
+        Assertions.assertThrows(
+                IllegalArgumentException.class, () -> new TriangleAreaCalculator(8, 0)
+        );
     }
 
     @Test
     public void shouldReturnExceptionWithNegativeHeight() {
-        TriangleAreaCalculator calculator = new TriangleAreaCalculator(8, -7);
-        Assertions.assertThrows(IllegalArgumentException.class, calculator::calcArea);
+        Assertions.assertThrows(
+                IllegalArgumentException.class, () -> new TriangleAreaCalculator(8, -7)
+        );
     }
 }
