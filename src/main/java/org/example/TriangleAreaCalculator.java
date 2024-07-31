@@ -5,14 +5,11 @@ public class TriangleAreaCalculator {
     private double height;
 
     public TriangleAreaCalculator(double base, double height) {
-        this.base = base;
-        this.height = height;
+        setBase(base);
+        setHeight(height);
     }
 
     public double calcArea() {
-        if (base <= 0 || height <= 0) {
-            throw new IllegalArgumentException("The base and height must be greater than zero");
-        }
         return base * height / 2;
     }
 
@@ -28,6 +25,9 @@ public class TriangleAreaCalculator {
     }
 
     public void setBase(double base) {
+        if (base <= 0) {
+            throw new IllegalArgumentException("The base must be greater than zero");
+        }
         this.base = base;
     }
 
@@ -36,6 +36,9 @@ public class TriangleAreaCalculator {
     }
 
     public void setHeight(double height) {
+        if (height <= 0){
+            throw new IllegalArgumentException("The height must be greater than zero");
+        }
         this.height = height;
     }
 }
