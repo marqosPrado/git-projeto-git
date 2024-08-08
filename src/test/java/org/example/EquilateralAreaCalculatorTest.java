@@ -2,11 +2,10 @@ package org.example;
 
 import org.example.interfaces.CalculateTriangleArea;
 import org.example.triangles.EquilateralTriangle;
-import org.example.triangles.IsoscelesTriangle;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class TriangleAreaCalculatorTest {
+public class EquilateralAreaCalculatorTest {
 
     @Test
     public void shouldCalcAreaEquilateralTriangle() {

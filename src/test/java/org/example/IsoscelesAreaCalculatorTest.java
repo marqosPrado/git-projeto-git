@@ -5,7 +5,7 @@ import org.example.triangles.IsoscelesTriangle;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class IsoscelesTriangleAreaCalculatorTest {
+public class IsoscelesAreaCalculatorTest {
 
     @Test
     public void shouldCalcAreaOfIsoscelesTriangle() {
