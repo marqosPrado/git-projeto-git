@@ -1,24 +1,19 @@
-package org.example;
+package org.example.triangles;
 
-public class TriangleAreaCalculator {
+import org.example.interfaces.CalculateTriangleArea;
+
+public class IsoscelesTriangle implements CalculateTriangleArea {
     private double base;
     private double height;
 
-    public TriangleAreaCalculator(double base, double height) {
+    public IsoscelesTriangle(double base, double height) {
         setBase(base);
         setHeight(height);
     }
 
-    public double calcAreaCommonTriangle() {
+    @Override
+    public double calculateArea() {
         return base * height / 2;
-    }
-
-    public double calcAreaEquilateral(double side) {
-        return (Math.pow(side, 2) * Math.sqrt(3)) / 4;
-    }
-
-    public double getBase() {
-        return base;
     }
 
     public void setBase(double base) {
@@ -26,10 +21,6 @@ public class TriangleAreaCalculator {
             throw new IllegalArgumentException("The base must be greater than zero");
         }
         this.base = base;
-    }
-
-    public double getHeight() {
-        return height;
     }
 
     public void setHeight(double height) {
